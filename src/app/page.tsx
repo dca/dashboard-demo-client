@@ -7,7 +7,7 @@ export default function Home() {
   const { replace } = useRouter();
 
   useEffect(() => {
-    replace('/pokedex-kids');
+    replace('/dashboard');
   }, [replace]);
 
   return <p>Redirecting...</p>;
