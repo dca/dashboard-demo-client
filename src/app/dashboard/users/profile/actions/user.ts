@@ -1,5 +1,5 @@
 export const fetchUserInfo = async () => {
-  const response = await fetch('https://serv3.dca.tw/api/user');
+  const response = await fetch('https://serv3.dca.tw/api/v1/user');
   if (!response.ok) throw new Error('Failed to fetch user info');
   return response.json();
 };
@@ -17,7 +17,7 @@ export const changeUserPassword = async (userId: number, data: any) => {
 };
 
 export const getUserById = async (userId: number) => {
-  const response = await fetch(`https://serv3.dca.tw/api/user/${userId}`, {
+  const response = await fetch(`https://serv3.dca.tw/api/v1/user/${userId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
