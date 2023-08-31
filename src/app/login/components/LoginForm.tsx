@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, Button, FormControl, FormLabel, Input, VStack, Text } from '@chakra-ui/react';
+import { Box, Button, FormControl, FormLabel, Input, VStack, Text, Link } from '@chakra-ui/react';
 
 export interface LoginFormData {
   email: string;
@@ -51,6 +51,8 @@ const LoginForm: React.FC<Props> = ({ onSubmit, apiError }) => {
       <Button width="100%" mt={4} type="submit">
         Login
       </Button>
+
+      <Link href="/signup">Signup</Link>
     </VStack>
   );
 };
