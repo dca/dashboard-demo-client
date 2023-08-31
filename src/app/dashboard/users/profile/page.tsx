@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Text, VStack, Flex } from '@chakra-ui/react';
 import { ChangePasswordForm } from './conpoments/ChangePasswordForm';
-import { changeUserPassword, fetchUserInfo } from './actions/api';
+import { changeUserPassword, fetchUserInfo } from './actions/user';
 
 export default function UserProfile() {
   const [user, setUser] = useState({ username: '', email: '', method: '' });

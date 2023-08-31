@@ -10,11 +10,10 @@ import { removeToken, saveToken } from '@/conponents/utils/JwtManage';
 export default function Page() {
   const [apiError, setApiError] = useState<string | null>(null);
   const router = useRouter();
-  
+
   const handleLogin = async (data: LoginFormData) => {
     try {
       const responseData = await login(data.email, data.password);
-
       saveToken(responseData.access_token);
       setApiError(null);
 

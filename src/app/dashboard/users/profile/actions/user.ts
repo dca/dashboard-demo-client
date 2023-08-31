@@ -5,7 +5,7 @@ export const fetchUserInfo = async () => {
 };
 
 export const changeUserPassword = async (userId: number, data: any) => {
-  const response = await fetch(`/api/user/${userId}`, {
+  const response = await fetch(`/api/v1/user/${userId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
