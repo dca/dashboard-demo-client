@@ -6,7 +6,7 @@ export type Statistics = {
 };
 
 export const getStatistics = async () => {
-    const response = await fetch('api/v1/user/statistics', {
+    const response = await fetch('https://serv3.dca.tw/api/v1/user/statistics', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
