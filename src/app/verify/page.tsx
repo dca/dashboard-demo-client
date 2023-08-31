@@ -25,7 +25,7 @@ export default function Page() {
       }
 
       try {
-        const response = await fetch('/api/v1/user/verification', {
+        const response = await fetch('https://serv3.dca.tw/api/v1/user/verification', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
