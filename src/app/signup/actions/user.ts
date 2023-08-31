@@ -1,5 +1,5 @@
 export const createUser = async (data: any) => {
-  const response = await fetch(`/api/v1/user/register`, {
+  const response = await fetch(`https://serv3.dca.tw/api/v1/user/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
