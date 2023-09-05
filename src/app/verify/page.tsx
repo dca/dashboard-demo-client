@@ -1,24 +1,26 @@
 'use client'
 
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 export default function CallbackPage() {
   const router = useRouter();
-  const { query } = router;
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const searchParams = useSearchParams()
+  const code = searchParams.get('code')
+
   useEffect(() => {
     const verifyCode = async () => {
-      if (query.code) {
+      if (code) {
         try {
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/auth0/callback`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ code: query.code }),
+            body: JSON.stringify({ code: code }),
           });
 
           if (response.ok) {
@@ -37,7 +39,7 @@ export default function CallbackPage() {
     };
 
     verifyCode();
-  }, [query]);
+  }, []);
 
   return (
     <div>
