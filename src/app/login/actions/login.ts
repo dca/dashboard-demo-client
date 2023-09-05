@@ -1,7 +1,7 @@
 // api/auth.ts
 
 export const login = async (email: string, password: string) => {
-    const response = await fetch('https://serv3.dca.tw/api/v1/auth/login', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -9,7 +9,13 @@ const Navbar: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
-    router.push('/login');
+
+    const domain = 'dev-gxk74uonng6ksizv.us.auth0.com'
+    const clientId = 'ud7oMkiSdtnMQpyrzGLVbmYFNtaIABCy'
+    const redirectUri = `${process.env.NEXT_PUBLIC_WEB_URL}/login`
+    const authUrl = `https://${domain}/v2/logout?returnTo=${encodeURIComponent(redirectUri)}&client_id=${clientId}`
+    router.push(authUrl);
+
   };
 
   return (
