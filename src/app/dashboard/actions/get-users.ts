@@ -10,7 +10,7 @@ export type User = {
 };
 
 export const getUsers = async () => {
-    const response = await fetch('https://serv3.dca.tw/api/v1/user', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
