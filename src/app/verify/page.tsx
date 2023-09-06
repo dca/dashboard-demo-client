@@ -21,7 +21,7 @@ export default function CallbackPage() {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ code, uid }),
+            body: JSON.stringify({ code, uid: Number.parseInt(uid ?? '') }),
           });
 
           if (response.ok) {
