@@ -15,7 +15,7 @@ export default function CallbackPage() {
     const verifyCode = async () => {
       if (code) {
         try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/auth0/callback`, {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/user/verification`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
