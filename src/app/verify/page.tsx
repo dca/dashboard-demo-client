@@ -10,6 +10,7 @@ export default function CallbackPage() {
 
   const searchParams = useSearchParams()
   const code = searchParams.get('code')
+  const uid = searchParams.get('uid')
 
   useEffect(() => {
     const verifyCode = async () => {
@@ -20,7 +21,7 @@ export default function CallbackPage() {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ code: code }),
+            body: JSON.stringify({ code, uid }),
           });
 
           if (response.ok) {
